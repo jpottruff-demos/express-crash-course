@@ -6,6 +6,7 @@ Demo app using *node* and *express* built following [Brad Traversy's tutorial](h
 ## Frameworks / Packages Used
 - [Express](https://expressjs.com/)
 - [nodemon](https://www.npmjs.com/package/nodemon)
+- [MomentJS](https://momentjs.com/)
 
 ## Other Tools 
 - [Postman](https://www.postman.com/)

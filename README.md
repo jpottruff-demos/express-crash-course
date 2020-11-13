@@ -7,6 +7,7 @@ Demo app using *node* and *express* built following [Brad Traversy's tutorial](h
 - [Express](https://expressjs.com/)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [MomentJS](https://momentjs.com/)
+- [UUID](https://www.npmjs.com/package/uuid) *UUID generation for mocking unique DB ids*
 
 ## Other Tools 
 - [Postman](https://www.postman.com/)

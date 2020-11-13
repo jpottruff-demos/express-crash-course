@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 
 const logger = require('./middleware/logger');
-const members = require('./models/Members');
 
 // Initalize Express
 const app = express();
@@ -10,6 +9,13 @@ const app = express();
 
 // Initalize any necessary middleware (just an example - doesn't do much)
 // app.use(logger); 
+
+// Body Parser Middleware - allows us to parse JSON in the request
+app.use(express.json());
+// Allows us to handle url encoded data
+app.use(express.urlencoded({extended: false}));
+
+
 
 // Routing setup
 // NOTE: we aren't doing it this way
@@ -19,26 +25,15 @@ const app = express();
 //     );
 // });
 
-// Setup a static folder
+// Setup a static folder route
 app.use(express.static(
     path.join(__dirname, 'public')
 ))
 
+// Setup some api routes
+// Members API Routes
+app.use('/api/members', require('./routes/api/members'));
 
-
-// Send back some JSON data
-
-// Get all members
-app.get('/api/members', (req, res) => res.json(members));
-
-// Get a single member
-app.get('/api/members/:id', (req, res) => {
-    // res.send(req.params.id);
-    const found = members.some(member => member.id === parseInt(req.params.id));
-    (found) ?
-        res.json(members.filter(member => member.id === parseInt(req.params.id)))
-        : res.status(400).json({msg: `No member with id ${req.params.id}`});
-});
 
 // PORT Setup (defaults to 5000 if not defined in ENV)
 const PORT = process.env.PORT || 5000; 

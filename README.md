@@ -8,6 +8,8 @@ Demo app using *node* and *express* built following [Brad Traversy's tutorial](h
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [MomentJS](https://momentjs.com/)
 - [UUID](https://www.npmjs.com/package/uuid) *UUID generation for mocking unique DB ids*
+- [Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/) *using CDN on handlebars template*
 
 ## Other Tools 
 - [Postman](https://www.postman.com/)

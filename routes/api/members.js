@@ -40,7 +40,10 @@ router.post('/', (req, res) => {
 
     // This would normally be a DB call
     members.push(newMember);
-    return res.json(members);
+    res.json(members);
+
+    // This is just an example for handlebars redirects
+    // res.redirect('/');
 });
 
 // Update a member

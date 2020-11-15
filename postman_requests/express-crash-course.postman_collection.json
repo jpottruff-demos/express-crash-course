@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "d9f31c7d-4490-49e9-9003-e5bbbae175ef",
+		"name": "express-crash-course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Member by ID (Invalid)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\": \"kreator\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"4"
+					]
+				},
+				"description": "Querying for a member that does not exist"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Member by ID (Valid)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\": \"kreator\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"2"
+					]
+				},
+				"description": "Queries for a member that exists"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Member (Valid)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jake the Snake\",\r\n    \"email\": \"ssss@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members"
+					]
+				},
+				"description": "Creates a member with a name and email"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Member (Invalid)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jake the Snake\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members"
+					]
+				},
+				"description": "Request to create a member without all necessary info (eg. name and email)"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Member by ID (Valid)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jaaaaahn@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"1"
+					]
+				},
+				"description": "Updates the email of the member with ID 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Member by ID (Invalid)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jaaaaahn@email.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/members/56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"56"
+					]
+				},
+				"description": "Attempts to update a member that does not exist"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Member (Valid)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/members/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"1"
+					]
+				},
+				"description": "Simulates a delete on a member that exists (NOTE: we are just filtering on the backend - no actual CRUD taking place)"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Member (Invalid)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/members/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"members",
+						"16"
+					]
+				},
+				"description": "Attempts to delete a member that does not exist"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
